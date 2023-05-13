@@ -1,16 +1,25 @@
 import React from "react";
 
+let grid = {
+    display: "grid",
+    gridTemplateColumns: "3fr 1fr",
+    textAlign: "left"
+}
+let border = {
+    border: "1px solid black"
+}
+
 function Track(props) {
     let titleText = props.title;
-    let author = props.author;
+    let author = props.artist;
     let add = "+";
     return (
-        <div>
-            <div style="width: 75%; float: left;">
+        <div style={grid}>
+            <div style={border}>
                 <h2>{titleText}</h2>
                 <p>{author}</p>
             </div>
-            <div style="width: 25%; float: left; text-align: center;">{add}</div>
+            <div style={border}>{add}</div>
         </div>
     )
 }
