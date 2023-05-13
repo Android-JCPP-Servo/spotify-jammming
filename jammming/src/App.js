@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+import SearchBar from './SearchBar/SearchBar';
+import Tracklist from './Tracklist/Tracklist'
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +21,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <SearchBar/>
+        <Tracklist/>
+      </div>
     </div>
   );
 }
