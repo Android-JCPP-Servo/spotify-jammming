@@ -21,11 +21,9 @@ function App() {
           Learn React
         </a> */}
 
-      </header>
-      <div>
         <SearchBar/>
         <Tracklist/>
-      </div>
+      </header>
     </div>
   );
 }
