@@ -22,7 +22,14 @@ function App() {
         </a> */}
 
         <SearchBar/>
-        <Tracklist/>
+        <div className="grid">
+          <div>
+            <Tracklist/>
+          </div>
+          <div>
+            {/* <Playlist /> */}
+          </div>
+        </div>
       </header>
     </div>
   );
