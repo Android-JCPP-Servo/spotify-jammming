@@ -3,27 +3,51 @@ import React, { useState } from 'react';
 import Tracklist from '../Tracklist/Tracklist';
 
 function SearchBar() {
-    const [music, setMusic] = useState("");
+    // const [music, setMusic] = useState("");
     // Use for GET and POST requests
-    // const [music, setMusic] = useState([]);
+    const [music, setMusic] = useState([]);
 
-    const fourbanger = {
-        name: "Start Your Engines",
-        artist: "Fourbanger",
-        album: "Fourbanger: Start Your Engines",
-        id: 1
-    }
+    const musicList = [
+        {
+            id: 1,
+            name: "Start Your Engines",
+            artist: "Fourbanger",
+            album: "Fourbanger: Start Your Engines"
+        },
+        {
+            id: 2,
+            name: "The Mole",
+            artist: "Hans Zimmer",
+            album: "Dunkirk"
+        },
+        {
+            id: 3,
+            name: "Doesn't Sound Like Me At All",
+            artist: "Fourbanger",
+            album: "Fourbanger: Start Your Engines"
+        }
+    ]
 
     function handleSearchSpotify(e) {
         e.preventDefault();
+        
         const searchedMusic = e.target.querySelector('input[id="searchMusic"]').value;
-        if (searchedMusic == fourbanger.name || searchedMusic == fourbanger.artist || searchedMusic == fourbanger.album) {
-            setMusic(searchedMusic);
-        }
+        console.log("Searched Music:", searchedMusic);
+
+        musicList.forEach(music => {
+            for (let value in music) {
+                // console.log("Music:", music[value]);
+                if (music[value] == searchedMusic) {
+                    console.log("Music:", music);
+                    setMusic(music);
+                }
+            }
+        });
     }
 
     function searchMusic() {
-        return <Tracklist name={fourbanger.name} artist={fourbanger.artist} album={fourbanger.album} id={fourbanger.id}/>
+        // console.log("Music:", music);
+        return <Tracklist name={music.name} artist={music.artist} album={music.album} id={music.id}/>
     }
 
     const searchBar = (

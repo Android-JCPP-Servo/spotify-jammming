@@ -18,7 +18,7 @@ let border = {
 }
 
 function Track(props) {
-    let titleText = props.title;
+    let name = props.name;
     let artist = props.artist;
     let album = props.album;
     let id = props.id;
@@ -26,7 +26,7 @@ function Track(props) {
     return (
         <div style={grid}>
             <div style={{...border, ...left}} id={id}>
-                <h2>{titleText}</h2>
+                <h2>{name}</h2>
                 <p>{artist}</p>
                 <p>{album}</p>
             </div>
