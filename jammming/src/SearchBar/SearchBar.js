@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function SearchBar() {
+    const [music, setMusic] = useState("");
+
+    function handleSearchSpotify(e) {
+        e.preventDefault();
+        const searchedMusic = e.target.querySelector('input[id="searchMusic"]').value;
+        setMusic(searchedMusic);
+    }
+
+    function searchMusic() {
+        console.log("Music:", music);
+        return <p>Music: {music}</p>
+    }
+
+    const searchBar = (
+        <form action="#" onSubmit={handleSearchSpotify}>
+            <input type="text" id="searchMusic" placeholder="Search Spotify" />
+            <input type="submit"/>
+        </form>
+    );
+
     return (
         <div>
-            <input id="searchBar" class="searchBar" name="searchBar" type="text" placeholder="Search by title, author, or category"/>
-            <button id="searchButton" class="searchButton" name="searchButton">Search</button>
+            {searchBar}
+            <p>{music ? searchMusic() : "No music found!"}</p>
         </div>
     );
 }
