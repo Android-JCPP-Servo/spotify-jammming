@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import SearchBar from './SearchBar/SearchBar';
-import Tracklist from './Tracklist/Tracklist'
+import Tracklist from './Tracklist/Tracklist';
+import Playlist from './Playlist/Playlist';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Tracklist/>
           </div>
           <div>
-            {/* <Playlist /> */}
+            <Playlist />
           </div>
         </div>
       </header>
