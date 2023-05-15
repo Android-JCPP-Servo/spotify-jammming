@@ -14,6 +14,10 @@ function SearchBar() {
         return <p>Music: {music}</p>
     }
 
+    const musicList = {
+        
+    }
+
     const searchBar = (
         <form action="#" onSubmit={handleSearchSpotify}>
             <input type="text" id="searchMusic" placeholder="Search Spotify" />
